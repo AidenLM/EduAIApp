@@ -87,6 +87,29 @@ struct ContentGenerationView: View {
                         .foregroundColor(.secondary)
                         .multilineTextAlignment(.center)
                         .padding(.horizontal)
+                
+                // MEB Uygunluk Badge'i - Sadece lise için göster
+                if viewModel.selectedEducationLevel == .highSchool {
+                    HStack(spacing: 8) {
+                        Image(systemName: "star.fill")
+                            .font(.system(size: 16))
+                            .foregroundColor(.purple)
+                        
+                        Text("🎯 MEB Onaylı AI İçerik")
+                            .font(.system(size: 14, weight: .medium))
+                            .foregroundColor(.primary)
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
+                    .background(
+                        Capsule()
+                            .fill(Color.purple.opacity(0.1))
+                            .overlay(
+                                Capsule()
+                                    .stroke(Color.purple.opacity(0.3), lineWidth: 1)
+                            )
+                    )
+                }
                 }
                 
                 // Selection Summary

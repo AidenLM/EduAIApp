@@ -70,6 +70,29 @@ struct TestGenerationView: View {
                         .foregroundColor(.secondary)
                         .multilineTextAlignment(.center)
                         .padding(.horizontal)
+                
+                // MEB Uygunluk Badge'i - Sadece lise için göster
+                if contentViewModel.selectedEducationLevel == .highSchool {
+                    HStack(spacing: 8) {
+                        Image(systemName: "checkmark.circle.fill")
+                            .font(.system(size: 16))
+                            .foregroundColor(.green)
+                        
+                        Text("🧪 MEB Standartlarında Test")
+                            .font(.system(size: 14, weight: .medium))
+                            .foregroundColor(.primary)
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
+                    .background(
+                        Capsule()
+                            .fill(Color.green.opacity(0.1))
+                            .overlay(
+                                Capsule()
+                                    .stroke(Color.green.opacity(0.3), lineWidth: 1)
+                            )
+                    )
+                }
                 }
                 
                 // Selection Summary

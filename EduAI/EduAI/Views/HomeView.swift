@@ -142,6 +142,28 @@ struct EducationLevelCard: View {
             RoundedRectangle(cornerRadius: 16)
                 .stroke(Color(level.color).opacity(0.3), lineWidth: 1)
         )
+        .overlay(
+            // MEB Onay Tick'i - Sadece lise için
+            Group {
+                if level == .highSchool {
+                    VStack {
+                        HStack {
+                            Spacer()
+                            Image(systemName: "checkmark.circle.fill")
+                                .font(.system(size: 20))
+                                .foregroundColor(.white)
+                                .background(
+                                    Circle()
+                                        .fill(Color.green)
+                                        .frame(width: 24, height: 24)
+                                )
+                                .offset(x: -8, y: 8)
+                        }
+                        Spacer()
+                    }
+                }
+            }
+        )
     }
 }
 

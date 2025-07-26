@@ -50,8 +50,36 @@ struct TopicSelectionView: View {
                 .font(.subheadline)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
+            
+            // MEB Uygunluk Badge'i - Sadece lise için göster
+            if viewModel.selectedEducationLevel == .highSchool {
+                mebComplianceBadge
+            }
         }
         .padding(.vertical, 20)
+    }
+    
+    private var mebComplianceBadge: some View {
+        HStack(spacing: 8) {
+            Image(systemName: "doc.text.fill")
+                .font(.system(size: 16))
+                .foregroundColor(.orange)
+            
+            Text("📚 MEB Onaylı Konu İçerikleri")
+                .font(.system(size: 14, weight: .medium))
+                .foregroundColor(.primary)
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 8)
+        .background(
+            Capsule()
+                .fill(Color.orange.opacity(0.1))
+                .overlay(
+                    Capsule()
+                        .stroke(Color.orange.opacity(0.3), lineWidth: 1)
+                )
+        )
+        .animation(.easeInOut(duration: 0.3), value: viewModel.selectedEducationLevel == .highSchool)
     }
     
     @ViewBuilder

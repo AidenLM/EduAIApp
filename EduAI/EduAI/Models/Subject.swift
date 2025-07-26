@@ -45,7 +45,15 @@ enum Subject: String, CaseIterable, Identifiable {
     }
     
     func getTopics(for educationLevel: EducationLevel, grade: Int) -> [Topic] {
-        // Konular eğitim seviyesi ve sınıfa göre değişir
+        // MEB müfredatından konuları al
+        let mebTopics = MEBCurriculumService.shared.getTopics(for: self, grade: grade)
+        
+        // MEB konuları varsa onları kullan, yoksa varsayılan konuları döndür
+        if !mebTopics.isEmpty {
+            return mebTopics
+        }
+        
+        // Fallback: Varsayılan konular - eğitim seviyesi ve sınıfa göre değişir
         switch self {
         case .mathematics:
             return getMathTopics(for: educationLevel, grade: grade)

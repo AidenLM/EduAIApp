@@ -50,8 +50,36 @@ struct SubjectSelectionView: View {
                 .font(.subheadline)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
+            
+            // MEB Uygunluk Badge'i - Sadece lise için göster
+            if viewModel.selectedEducationLevel == .highSchool {
+                mebComplianceBadge
+            }
         }
         .padding(.vertical, 20)
+    }
+    
+    private var mebComplianceBadge: some View {
+        HStack(spacing: 8) {
+            Image(systemName: "graduationcap.fill")
+                .font(.system(size: 16))
+                .foregroundColor(.blue)
+            
+            Text("🏛️ MEB Müfredatına Uygun İçerik")
+                .font(.system(size: 14, weight: .medium))
+                .foregroundColor(.primary)
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 8)
+        .background(
+            Capsule()
+                .fill(Color.blue.opacity(0.1))
+                .overlay(
+                    Capsule()
+                        .stroke(Color.blue.opacity(0.3), lineWidth: 1)
+                )
+        )
+        .animation(.easeInOut(duration: 0.3), value: viewModel.selectedEducationLevel == .highSchool)
     }
     
     private var subjectSelectionSection: some View {

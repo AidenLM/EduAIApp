@@ -39,8 +39,36 @@ struct GradeSelectionView: View {
                 .font(.subheadline)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
+            
+            // MEB Uygunluk Badge'i - Sadece lise için göster
+            if educationLevel == .highSchool {
+                mebComplianceBadge
+            }
         }
         .padding(.vertical, 20)
+    }
+    
+    private var mebComplianceBadge: some View {
+        HStack(spacing: 8) {
+            Image(systemName: "checkmark.seal.fill")
+                .font(.system(size: 16))
+                .foregroundColor(.green)
+            
+            Text("MEB Müfredatına Uygundur")
+                .font(.system(size: 14, weight: .medium))
+                .foregroundColor(.primary)
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 8)
+        .background(
+            Capsule()
+                .fill(Color.green.opacity(0.1))
+                .overlay(
+                    Capsule()
+                        .stroke(Color.green.opacity(0.3), lineWidth: 1)
+                )
+        )
+        .animation(.easeInOut(duration: 0.3), value: educationLevel == .highSchool)
     }
     
     private var gradeSelectionSection: some View {
