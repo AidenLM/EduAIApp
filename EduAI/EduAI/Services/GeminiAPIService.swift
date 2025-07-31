@@ -367,6 +367,7 @@ class GeminiAPIService {
 
 enum APIError: Error, LocalizedError {
     case invalidURL
+    //updated
     case serverError
     case invalidResponse
     case noAPIKey
