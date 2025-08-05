@@ -288,7 +288,7 @@ struct Content: Identifiable, Codable {
 - **Google Gemini AI** - AI teknolojisi için
 - **SwiftUI** - Modern UI framework'ü için
 - **iOS Community** - Açık kaynak katkıları için
-- **Kutay** - Fikir Desteği için
+- **Kutay Şahin** - Fikir Desteği için
 
 ---
 
