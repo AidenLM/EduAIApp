@@ -3,7 +3,7 @@
 ![iOS](https://img.shields.io/badge/iOS-15.0+-blue.svg)
 ![Swift](https://img.shields.io/badge/Swift-5.7+-orange.svg)
 ![SwiftUI](https://img.shields.io/badge/SwiftUI-3.0+-green.svg)
-![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 
 EduAI, öğrenciler ve öğretmenler için yapay zeka destekli eğitim içeriği üreten modern bir iOS uygulamasıdır. Google Gemini AI teknolojisi kullanarak kişiselleştirilmiş konu anlatımları ve test soruları oluşturur.
 
@@ -276,14 +276,7 @@ struct Content: Identifiable, Codable {
 4. Push yapın (`git push origin feature/AmazingFeature`)
 5. Pull Request açın
 
-## 📝 Lisans
 
-Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakın.
-
-## 👥 Geliştiriciler
-
-- **AI Assistant** - Ana geliştirici
-- **Claude Sonnet 4** - AI teknolojisi
 
 ## 📞 İletişim
 
