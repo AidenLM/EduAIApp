@@ -2,10 +2,10 @@ import Foundation
 
 class GeminiAPIService {
     private let apiKey: String
-    private let baseURL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent"
+    private let baseURL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent"
     private let networkService = NetworkService.shared
     
-    init(apiKey: String = "AIzaSyCEZIEDhKyU7uAsmdXpPH33eg8af8l7YOg") {
+    init(apiKey: String = "AIzaSyCurFujx1O6U4qP-_CFFyqFqI3uct4GWvw") {
         self.apiKey = apiKey
     }
     

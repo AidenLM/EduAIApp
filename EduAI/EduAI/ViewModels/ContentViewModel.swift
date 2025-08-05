@@ -17,7 +17,7 @@ class ContentViewModel: ObservableObject {
     private let geminiService: GeminiAPIService
     private let cacheService = CacheService()
     
-    init(apiKey: String = "AIzaSyCEZIEDhKyU7uAsmdXpPH33eg8af8l7YOg") {
+    init(apiKey: String = "AIzaSyCurFujx1O6U4qP-_CFFyqFqI3uct4GWvw") {
         self.geminiService = GeminiAPIService(apiKey: apiKey)
         loadFavorites()
     }
