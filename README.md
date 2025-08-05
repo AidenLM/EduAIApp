@@ -281,7 +281,7 @@ struct Content: Identifiable, Codable {
 ## 📞 İletişim
 
 - **GitHub Issues** - Bug raporları ve özellik istekleri
-- **Email** - developer@eduai.com
+- **Email** - etab5personal@gmail.com - Mehmet Akif Elem
 
 ## 🙏 Teşekkürler
 
@@ -291,5 +291,6 @@ struct Content: Identifiable, Codable {
 - **Kutay Şahin** - Fikir Desteği için
 
 ---
+**Geliştirici:** Mehmet Akif Elem
 
 **EduAI** ile öğrenme deneyiminizi geliştirin! 🎓✨ 
